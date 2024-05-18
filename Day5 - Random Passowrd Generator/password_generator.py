@@ -13,15 +13,15 @@ required_numbers = int(input(f"How many numbers would you like?\n"))
 password_list =  []
 
 
-for i in range(1, required_letters + 1):
+for i in range(0, required_letters):
     char = random.choice(letters)
     password_list.append(char)
 
-for i in range(1, required_numbers + 1):
+for i in range(0, required_numbers ):
     num = random.choice(numbers)
     password_list.append(num)
 
-for i in range(1, required_symbols + 1):
+for i in range(0, required_symbols ):
     symb = random.choice(symbols)
     password_list.append(symb)
 
