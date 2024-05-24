@@ -1,1 +1,1 @@
-wordlist = ["Rocket", "Rabbit", "Cat", "Piano", "Carrot", "r", "rge"]
+wordlist = ["rocket", "rabbit", "cat", "piano", "carrot", "r", "rge"]
