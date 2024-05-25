@@ -1,7 +1,5 @@
-from hangman_art import logo 
-from hangman_art import stages
+from hangman_art import logo, stages 
 from word_list import wordlist
-import random
 
 print(logo)
 print("")
@@ -9,7 +7,6 @@ print("Welcome to HANGMAN !!")
 
 word = random.choice(wordlist)
 
-print(word)
 print("")
 print("It is a", len(word), " letter word")
 print("")
@@ -27,11 +24,15 @@ end_of_game = False
 while not end_of_game:
     guess = input("Guess your letter:").lower()
     
-    for i in word:
-        letter = word.index(i)
-        if (guess == i):
-            word_blank[letter] = i
-
+    if guess in word_blank:
+            print(f"You have already chosen {guess} pick something else")
+    
+    for i in range(len(word)):
+        letter = word[i]
+           
+        if letter == guess:
+            word_blank[i] = letter
+        
     if guess not in word:
         lives -= 1
         print(f"You have guessed {guess}, and hence its not in the word YOU LOSE A LIFE!")
