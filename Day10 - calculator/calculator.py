@@ -1,8 +1,5 @@
 import logo
 
-print(logo.logo)
-print("")
-
 def add(n1, n2):
     return n1 + n2
 
@@ -22,16 +19,34 @@ operations = {
     "/" : divide
 }
 
-num1 = int(input("What is your First Number : "))
-for symbol in operations:
-    print(symbol)
-operation = input("pick your operation : ")
-num2 = int(input("What is your Second Number : "))
+def calculator():
+    
+    print(logo.logo)
+    print("")
+    
+    num1 = float(input("What is your First Number : "))
+    for symbol in operations:
+        print(symbol)
 
-operation_function = operations[operation]
-answer = operation_function(num1, num2)
+    keep_going = True
 
-print(f"{num1} {operation} {num2} = {answer}")
+    while keep_going:
+        operation = input("pick your operation : ")
+        num2 = float(input("What is your Second Number : "))
+
+        operation_function = operations[operation]
+        answer = operation_function(num1, num2)
+
+        print(f"{num1} {operation} {num2} = {answer}")
+
+        keepGoing = input(f"Do you want to keep going with {answer} (yes or no) : ")
+        if keepGoing == "yes":
+            num1 = answer
+        else:
+            keep_going = False
+            calculator()
+
+calculator()
 
 
 
